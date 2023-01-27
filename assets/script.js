@@ -98,28 +98,12 @@ $(document).on("click", "td", (i) => {
     search();
 });
 
+// Event Handler for clear button
+$('#clr-btn').click(() => {
+    localStorage.removeItem("cities");
+    loadRecentCities();
+    listCities();
+});
 
-})
-// The city name
 
-// The date
-
-// An icon representation of weather conditions
-
-// The temperature
-
-// The humidity
-
-// The wind speed
-
-// When a user views future weather conditions for that city they are presented with a 5-day forecast that displays:
-
-// The date
-
-// An icon representation of weather conditions
-
-// The temperature
-
-// The humidity
-
-// When a user clicks on a city in the search history they are again presented with current and future conditions for that city.
+});
