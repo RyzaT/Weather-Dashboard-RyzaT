@@ -1,3 +1,8 @@
+// Global Vars
+var city;
+var cities;
+
+
 // OpenWeather API,
 // Search API for City
 function search() {
@@ -21,7 +26,16 @@ function search() {
 
 
 })};    
-// When a user views the current weather conditions for that city they are presented with:
+
+// Need to search for city (event handler?)
+$('#submit').on("click", (i)=> {
+    i.preventDefault();
+    search();
+    searchCity();
+    $('#entered-city').val("");
+    listCities();
+});
+
 
 // The city name
 
