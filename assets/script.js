@@ -1,3 +1,5 @@
+$(document).ready(function () {
+
 // Global Vars
 var city;
 var cities;
@@ -14,8 +16,8 @@ function search() {
         url: queryURL,
         method: "GET",
     }).then(function (response) {
-        coordinates.push(response.coordinates.lat);
-        coordinates.push(response.coordinates.lon);
+        //coordinates.push(response.coordinates.lat);
+        //coordinates.push(response.coordinates.lon);
         var cityName = response.name;
         var cityTemp = response.main.temp;
         var cityCond = response.weather[0].description;
@@ -56,7 +58,7 @@ function searchCity() {
 
 // Function to load last searched city
 function loadLastCity() {
-    var lastSearch = localStorage.getItem("lastCity");
+    let lastSearch = localStorage.getItem("lastCity");
     if (lastSearch) {
         city = lastSearch;
         search();
@@ -78,8 +80,26 @@ function loadRecentCities() {
 }
 loadRecentCities ()
 
+//Function to SHOW recent city search 
+function listCities() {
+    $('#cityList').text("");
+    cities.forEach(city => {
+        $('#cityList').prepend("<tr><td>" + city + "</td></tr>");
+        
+    });
+}
+listCities();
+
+// Event handler for recent searches in table
+$(document).on("click", "td", (i) => {
+    i.preventDefault();
+    let listedCity = $(i.target).text();
+    city  = listedCity;
+    search();
+});
 
 
+})
 // The city name
 
 // The date
