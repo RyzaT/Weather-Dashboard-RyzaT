@@ -32,7 +32,20 @@ function search() {
         var cityWind = response.wind.speed;
         var cityHumi = response.main.humidity;
         var icon = response.weather[0].icon;
-        $('')
+        $('#icon').html(
+           // `<img src="http://openweathermap.org/img/wn/${icon}@2x.png">`  
+        );
+
+        $("#city-name").html(cityName + " " + "(" + Today + ")");
+        $("#condition").text("Current Conditions: " + cityCond);
+        $("#temp").text("Current Temp (F): " + cityTemp.toFixed(1));
+        $("#humidity").text("Humidity: " + cityHumi + "%");
+        $("#wind-speed").text("Wind Speed: " + cityWind + "mph");
+        $("#date1").text(day1);
+        $("#date2").text(day2);
+        $("#date3").text(day3);
+        $("#date4").text(day4);
+        $("#date5").text(day5);
 
 
 })};    
