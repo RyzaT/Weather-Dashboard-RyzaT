@@ -37,7 +37,14 @@
             </div>
           </div>
         </form>
-        <div class="list-group" id="history"></div>
+        <!-- List past searches-->
+        <div class="box table-box">
+          <div class="table-container">
+          <table class="list-group" id="cityList">
+            <tr></tr>
+          </table>  <!-- Table Data should generate in JavaScript -->
+          <button class="clear button" id="clr-btn">CLEAR</button>
+        </div>
       </aside>
 
       <div class="col-lg-9 pb-3">
@@ -46,6 +53,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Data Return from query -->
+  
 
   <!-- Moment.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
