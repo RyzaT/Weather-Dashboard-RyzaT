@@ -4,6 +4,14 @@ $(document).ready(function () {
 var city;
 var cities;
 
+// moment current date
+let Today = moment().format("");
+// add days for forecast to moment
+let day1 = moment().add(1, "days").format();
+let day2 = moment().add(2, "days").format();
+let day3 = moment().add(3, "days").format();
+let day4 = moment().add(4, "days").format();
+let day5 = moment().add(5, "days").format();
 
 // OpenWeather API,
 // Search API for City
