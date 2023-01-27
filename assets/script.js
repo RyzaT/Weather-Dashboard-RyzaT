@@ -36,6 +36,24 @@ $('#submit').on("click", (i)=> {
     listCities();
 });
 
+// Function to save city search
+function saveToLocalStorage() {
+    localStorage.setItem("mostRecent", city);
+    cities.push(city);
+    localStorage.setItem("cities", JSON.stringify(cities));
+};
+// Function to retrieve city search
+function searchCity() {
+    city = $('#entered-city').val();
+    if (city && cities.includes(city) === false) {
+        saveToLocalStorage();
+        return city;
+    }   
+    else if (!city) {
+        alert("Nope, Please try another city");
+    }
+}
+
 
 // The city name
 
