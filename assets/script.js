@@ -1,8 +1,26 @@
 // OpenWeather API,
-let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=e58a91b5528ac74b5640933904b043fa";
+// Search API for City
+function search() {
+
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=e58a91b5528ac74b5640933904b043fa";
+    var coordinates = [];
+
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+    }).then(function (response) {
+        coordinates.push(response.coordinates.lat);
+        coordinates.push(response.coordinates.lon);
+        var cityName = response.name;
+        var cityTemp = response.main.temp;
+        var cityCond = response.weather[0].description;
+        var cityWind = response.wind.speed;
+        var cityHumi = response.main.humidity;
+        var icon = response.weather[0].icon;
+        $('')
 
 
-
+})};    
 // When a user views the current weather conditions for that city they are presented with:
 
 // The city name
