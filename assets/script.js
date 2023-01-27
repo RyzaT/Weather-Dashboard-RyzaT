@@ -52,7 +52,32 @@ function searchCity() {
     else if (!city) {
         alert("Nope, Please try another city");
     }
+};
+
+// Function to load last searched city
+function loadLastCity() {
+    var lastSearch = localStorage.getItem("lastCity");
+    if (lastSearch) {
+        city = lastSearch;
+        search();
+    }   else {
+        city = "Leicester";
+        search();
+    }
 }
+loadLastCity()
+
+//Function to load most recent cities
+function loadRecentCities() {
+    let recentCities = JSON.parse(localStorage.getItem("cities"));
+    if (recentCities) {
+        cities = recentCities;
+    }   else {
+        cities = [];
+    }
+}
+loadRecentCities ()
+
 
 
 // The city name
