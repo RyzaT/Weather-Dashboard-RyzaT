@@ -24,8 +24,8 @@ function search() {
         url: queryURL,
         method: "GET",
     }).then(function (response) {
-        //coordinates.push(response.coordinates.lat);
-        //coordinates.push(response.coordinates.lon);
+        coordinates.push(response.coordinates.lat);
+        coordinates.push(response.coordinates.lon);
         var cityName = response.name;
         var cityTemp = response.main.temp;
         var cityCond = response.weather[0].description;
@@ -33,7 +33,7 @@ function search() {
         var cityHumi = response.main.humidity;
         var icon = response.weather[0].icon;
         $('#icon').html(
-           // `<img src="http://openweathermap.org/img/wn/${icon}@2x.png">`  
+         `<img src="http://openweathermap.org/img/wn/${icon}@2x.png">`  
         );
 
         $("#city-name").html(cityName + " " + "(" + Today + ")");
@@ -49,6 +49,20 @@ function search() {
 
 
 })};    
+    $.ajax({
+        url: "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat +"&lon=" + lon + "&exclude=minutely,hourly" + "&units+imperial&appid=e58a91b5528ac74b5640933904b043fa",
+        method: "GET"
+    }).then(function (response) {
+
+        let cityHigh = response.daily[0].temp.max;
+        $("#high").text("Daily High (F): " + " " + cityHigh);
+// Forcast Temps
+        let day1temp = response.daily[1].temp.max;
+        let day2temp = response.daily[2].temp.max;
+        let day3temp = response.daily[3].temp.max;
+        let day4temp = response.daily[4].temp.max;
+        let day5temp = response.daily[5].temp.max;
+    })
 
 // Need to search for city (event handler?)
 $('#submit').on("click", (i)=> {
