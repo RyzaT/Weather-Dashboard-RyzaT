@@ -62,6 +62,28 @@ function search() {
         let day3temp = response.daily[3].temp.max;
         let day4temp = response.daily[4].temp.max;
         let day5temp = response.daily[5].temp.max;
+        $("#temp1").text("Temp(F):" + " " + day1temp.toFixed(1));
+        $("#temp2").text("Temp(F):" + " " + day2temp.toFixed(1));
+        $("#temp3").text("Temp(F):" + " " + day3temp.toFixed(1));
+        $("#temp4").text("Temp(F):" + " " + day4temp.toFixed(1));
+        $("#temp5").text("Temp(F):" + " " + day5temp.toFixed(1));
+ // Forecast Humidity
+        let day1humidity = response.daily[1].humidity;
+        let day2humidity = response.daily[2].humidity;
+        let day3humidity = response.daily[3].humidity;
+        let day4humidity = response.daily[4].humidity;
+        let day5humidity = response.daily[5].humidity;
+        $("#humidity1").text("Humidity: " + " " + day1humidity  + "%");
+        $("#humidity2").text("Humidity: " + " " + day2humidity  + "%");
+        $("#humidity3").text("Humidity: " + " " + day3humidity  + "%");
+        $("#humidity4").text("Humidity: " + " " + day4humidity  + "%");
+        $("#humidity5").text("Humidity: " + " " + day5humidity  + "%");
+ // Forecast Icons
+        let icon1 = response.daily[1].weather[0].icon;
+        let icon2 = response.daily[2].weather[0].icon;
+        let icon3 = response.daily[3].weather[0].icon;
+        let icon4 = response.daily[4].weather[0].icon;
+        let icon5 = response.daily[5].weather[0].icon;              
     })
 
 // Need to search for city (event handler?)
