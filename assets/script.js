@@ -83,8 +83,13 @@ function search() {
         let icon2 = response.daily[2].weather[0].icon;
         let icon3 = response.daily[3].weather[0].icon;
         let icon4 = response.daily[4].weather[0].icon;
-        let icon5 = response.daily[5].weather[0].icon;              
-    })
+        let icon5 = response.daily[5].weather[0].icon;
+        $("#icon1").html(`<img src="http://openweathermap.org/img/wn/${icon1}@2x.png">`);
+        $("#icon2").html(`<img src="http://openweathermap.org/img/wn/${icon2}@2x.png">`);
+        $("#icon3").html(`<img src="http://openweathermap.org/img/wn/${icon3}@2x.png">`);
+        $("#icon4").html(`<img src="http://openweathermap.org/img/wn/${icon4}@2x.png">`);
+        $("#icon5").html(`<img src="http://openweathermap.org/img/wn/${icon5}@2x.png">`);              
+    });
 
 // Need to search for city (event handler?)
 $('#submit').on("click", (i)=> {
