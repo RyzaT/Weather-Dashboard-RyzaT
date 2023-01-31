@@ -22,7 +22,7 @@ $(document).ready(function () {
       city = lastSearch;
       search();
     } else {
-      city = "Seattle";
+      city = "Leicester";
       search();
     }
   }
@@ -103,13 +103,13 @@ $(document).ready(function () {
       $("#date4").text(day4);
       $("#date5").text(day5);
 
-      getUV(response.coord.lat, response.coord.lon);
+      getSearch(response.coord.lat, response.coord.lon);
     }).fail(function (){
       alert("Could not get data")
     });
 
     //Function to get 5-day forecast and UV index and put them on page
-    function getUV(lat, lon) {
+    function getSearch(lat, lon) {
      
         
       $.ajax({
