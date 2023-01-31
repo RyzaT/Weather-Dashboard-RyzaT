@@ -21,7 +21,7 @@ The repository can be found at href: https://github.com/RyzaT/Weather-Dashboard-
 
 This page can be found at href: https://ryzat.github.io/Weather-Dashboard-RyzaT/
 
-![Alt text](https://github.com/RyzaT/Daily-Planner-App/blob/main/starter/assets/Daily%20Planner%20screenshot.png?raw=true)
+![Alt text](https://github.com/RyzaT/Weather-Dashboard-RyzaT/blob/main/assets/weather%20dash%20screen.png?raw=true)
 
 ## Usage
 This repositorty is part of a bootcamp learning platform and is a part of my coursework. Please feel free to use it for your own studies.
