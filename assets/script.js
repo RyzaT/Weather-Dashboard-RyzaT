@@ -108,7 +108,7 @@ $(document).ready(function () {
       alert("Could not get data")
     });
 
-    //Function to get 5-day forecast and UV index and put them on page
+    //Function to get 5-day forecast and put them on page
     function getSearch(lat, lon) {
      
         
